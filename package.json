@@ -1,0 +1,26 @@
+{
+  "name": "festival-musica",
+  "version": "1.0.0",
+  "description": "aprendiendo SASS Y NPM",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/scss/app.scss dist/css/app.css",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "author": "Marcos Ramírez",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.99.0",
+    "vite": "^8.0.16"
+  }
+}
