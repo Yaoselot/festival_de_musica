@@ -1,5 +1,5 @@
 import {defineConfig }from'vite'
 
-exportdefaultdefineConfig({
-  base:'/Terra/'
+export default defineConfig({
+  base:'/festival_de_musica/'
 })

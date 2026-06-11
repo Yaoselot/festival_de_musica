@@ -26,7 +26,7 @@ function crearGaleria() {
     
     for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
         const imagen = document.createElement('IMG')
-        imagen.src = `src/img/gallery/full/${i}.jpg`
+        imagen.src = `${import.meta.env.BASE_URL}img/gallery/full/${i}.jpg`
         imagen.alt = 'Imagen Galeria'
 
         //Event handler
@@ -52,7 +52,7 @@ function cerrarModal() {
 
 function mostrarImagen(i) {
     const imagen = document.createElement('IMG')
-    imagen.src = `src/img/gallery/full/${i}.jpg`
+    imagen.src = `${import.meta.env.BASE_URL}img/gallery/full/${i}.jpg`
     imagen.alt = 'Imagen Galeria'
     const modal = document.createElement('DIV')
     modal.classList.add('modal')
