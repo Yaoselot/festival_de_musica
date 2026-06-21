@@ -9,7 +9,10 @@
     "sass": "sass --watch src/scss/app.scss dist/css/app.css",
     "dev": "vite",
     "build": "vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "crop": "node scripts/crop.js",
+    "convert-gallery": "node scripts/convert-gallery.js",
+    "convert-content": "node scripts/convert-content.js"
   },
   "keywords": [
     "SASS",
@@ -23,6 +26,7 @@
     "gulp": "^5.0.1",
     "gulp-sass": "^6.0.1",
     "sass": "^1.99.0",
+    "sharp": "^0.35.2",
     "vite": "^8.0.16"
   }
 }

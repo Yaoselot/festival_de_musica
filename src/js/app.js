@@ -23,19 +23,25 @@ function crearGaleria() {
     const CANTIDAD_IMAGENES = 16
     const galeria = document.querySelector('.galeria-imagenes')
 
-    
-    for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
-        const imagen = document.createElement('IMG')
-        imagen.src = `${import.meta.env.BASE_URL}img/gallery/full/${i}.jpg`
-        imagen.alt = 'Imagen Galeria'
+    //chatGPT
+    for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
+        const img = document.createElement('picture');
+
+        img.innerHTML = `
+            <source srcset="img/gallery/thumb/avif/${i}.avif" type="image/avif">
+            <source srcset="img/gallery/thumb/content/webp/${i}.webp" type="image/webp">
+            <img width="300" height="200" loading="lazy" src="img/gallery/thumb/jpg/${i}.jpg" alt="sobre festival">
+        `;
 
         //Event handler
-        imagen.onclick = function() {
-            mostrarImagen(i)
-        }
+        img.addEventListener('click', () => {
+            mostrarImagen(i);
+        });
+        //fin event handler
 
-        galeria.appendChild(imagen)
+        galeria.appendChild(img);
     }
+// fin de chatGPT
 }
 
 function cerrarModal() {
@@ -51,12 +57,17 @@ function cerrarModal() {
 }
 
 function mostrarImagen(i) {
-    const imagen = document.createElement('IMG')
-    imagen.src = `${import.meta.env.BASE_URL}img/gallery/full/${i}.jpg`
-    imagen.alt = 'Imagen Galeria'
+    const img = document.createElement('picture');
+    img.innerHTML = `
+            <source srcset="img/gallery/full/avif/${i}.avif" type="image/avif">
+            <source srcset="img/gallery/full/content/webp/${i}.webp" type="image/webp">
+            <img width="300" height="200" loading="lazy" src="img/gallery/full/jpg/${i}.jpg" alt="sobre festival">
+        `;
+
     const modal = document.createElement('DIV')
     modal.classList.add('modal')
     modal.onclick = cerrarModal
+
 
     //boton cerrar modal
     const cerrarModalBtn = document.createElement('BUTTON')
@@ -64,7 +75,7 @@ function mostrarImagen(i) {
     cerrarModalBtn.classList.add('btn-cerrar')
     cerrarModalBtn.onclick = cerrarModal
 
-    modal.appendChild(imagen)
+    modal.appendChild(img)
     modal.appendChild(cerrarModalBtn)
 
     const body = document.querySelector('body')
